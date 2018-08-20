@@ -51,6 +51,9 @@ module.exports = {
     const { id } = req.params;
     playerModel.delete(id)
       .then(() => next())
-      .catch(err => next(err));
+      .catch((err) => {
+        console.error(err);
+        next(err);
+      });
   },
 };

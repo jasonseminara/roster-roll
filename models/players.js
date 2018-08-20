@@ -3,7 +3,7 @@ const db = require('../connection');
 module.exports = {
   findAll() {
     return db.many(`
-        SELECT * 
+        SELECT *
         FROM players
         `);
   },
@@ -27,7 +27,7 @@ module.exports = {
   },
 
   delete(id) {
-    return db.one(`
+    return db.none(`
         DELETE FROM players
         WHERE id = $1
         `, id);
