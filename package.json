@@ -21,8 +21,13 @@
     "nodemon": "^1.18.3"
   },
   "scripts": {
+    "db:drop": "dropdb team_db",
+    "db:init": "createdb team_db",
+    "db:reset:dev": "psql -d team_db -f ./db/schema.sql",
+    "db:seed:dev": "psql -d team_db -f ./db/seed.sql",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js -e js,css,html"
+    "dev": "nodemon server.js -e js,css,html",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
